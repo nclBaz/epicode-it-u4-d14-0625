@@ -6,6 +6,7 @@
         <class>riccardogulin.entities.Animal</class>
         <class>riccardogulin.entities.Dog</class>
         <class>riccardogulin.entities.Cat</class>
+        <class>riccardogulin.entities.Owner</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/u4d14"/>
             <!-- Nel mio caso la porta è 5433 nel vostro 5432 (se non l'avete cambiata) -->
@@ -14,6 +15,8 @@
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <!-- Quest'ultima impostazione servirà per far creare/aggiornare automaticamente le tabelle all'avvio dell'applicazione -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>

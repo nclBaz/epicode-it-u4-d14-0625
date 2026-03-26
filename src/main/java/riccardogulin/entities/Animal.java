@@ -8,6 +8,7 @@ import java.util.UUID;
 @Table(name = "animals")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "animal_type")
+@NamedQuery(name = "findAllAnimals", query = "SELECT a FROM Animal a")
 
 /*
 
@@ -47,6 +48,10 @@ public abstract class Animal {
 	private UUID id;
 	private String name;
 	private int age;
+
+	@ManyToOne
+	@JoinColumn(name = "owner_id") // <-- FK
+	private Owner owner;
 
 	protected Animal() {
 	}
